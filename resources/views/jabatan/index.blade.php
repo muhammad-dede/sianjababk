@@ -68,6 +68,7 @@
                 processing: true,
                 serverSide: true,
                 pageLength: 25,
+                searchDelay: 500,
                 ajax: {
                     url: "{{ route('jabatan.index') }}",
                     data: function(d) {

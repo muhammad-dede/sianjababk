@@ -18,7 +18,7 @@ class JabatanController extends Controller
     public function index(Request $request)
     {
         if ($request->ajax()) {
-            $data = Jabatan::with(['skpd', 'parent', 'children'])->get();
+            $data = Jabatan::with(['skpd', 'parent', 'children'])->orderBy('kode', 'asc')->get();
             return Datatables::of($data)
                 ->filter(function ($query) use ($request) {
                     if (!empty($request->get('search'))) {
